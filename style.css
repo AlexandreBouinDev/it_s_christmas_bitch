@@ -1,0 +1,209 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: sans-serif;
+  transition: 0.5s;
+}
+*:focus {
+  outline: none;
+}
+body {
+  min-height: 100vh;
+  background: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+iframe {
+  pointer-events: none;
+}
+
+.blink {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  animation: blink 2s infinite;
+  justify-content: center;
+  align-items: space-around;
+}
+
+.videogrid {
+  display: grid;
+  width: 100vw;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gif {
+  height: 500px;
+}
+
+@keyframes blink {
+  0% {
+    background: red;
+  }
+  20% {
+    background: green;
+  }
+  40% {
+    background: yellow;
+  }
+  60% {
+    background: blue;
+  }
+  80% {
+    background: orange;
+  }
+  100% {
+    background: red;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    background: red;
+  }
+  20% {
+    background: green;
+  }
+  40% {
+    background: yellow;
+  }
+  60% {
+    background: blue;
+  }
+  80% {
+    background: orange;
+  }
+  100% {
+    background: red;
+  }
+}
+
+.video-container {
+  width: max-content;
+  overflow: hidden;
+}
+
+.mariah {
+  display: block;
+  position: relative;
+  width: 1280px;
+  height: 720px;
+}
+
+.marquee-rtl {
+  overflow: hidden;
+  width: 100vw; /* largeur de la fenêtre */
+  font-size: 4em;
+  font-weight: bolder;
+  animation: text 2s infinite;
+}
+.marquee-rtl-top {
+  overflow: hidden;
+  width: 100vw; /* largeur de la fenêtre */
+  font-size: 4em;
+  font-weight: bolder;
+  animation: text 2s infinite;
+}
+
+.marquee-rtl > :first-child {
+  display: inline-block; /* modèle de boîte en ligne */
+  padding-right: 100%; /* un peu d'espace pour la transition */
+  padding-left: 100%; /* placement à droite du conteneur */
+  white-space: nowrap; /* pas de passage à la ligne */
+  animation: defilement-rtl 10s infinite linear;
+}
+
+@keyframes defilement-rtl {
+  0% {
+    transform: translate3d(0, 0, 0); /* position initiale à droite */
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0); /* position finale à gauche */
+  }
+}
+
+.marquee-rtl-top > :first-child {
+  display: inline-block; /* modèle de boîte en ligne */
+  padding-right: 100%; /* un peu d'espace pour la transition */
+  padding-left: 100%; /* placement à droite du conteneur */
+  white-space: nowrap; /* pas de passage à la ligne */
+  animation: defilement-rtl-top 10s infinite linear;
+}
+
+@keyframes defilement-rtl-top {
+  0% {
+    transform: translate3d(-100%, 0, 0); /* position initiale à droite */
+  }
+  100% {
+    transform: translate3d(0, 0, 0); /* position finale à gauche */
+  }
+}
+
+@keyframes text {
+  0% {
+    color: red;
+  }
+  20% {
+    color: green;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: blue;
+  }
+  80% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@-webkit-keyframes text {
+  0% {
+    color: red;
+  }
+  20% {
+    color: green;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: blue;
+  }
+  80% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .videogrid {
+    grid-template-columns: 1fr;
+  }
+  .gif {
+    height: 100px;
+  }
+  .mariah {
+    display: block;
+    width: 320px;
+    height: 180px;
+  }
+  .marquee-rtl-top {
+    font-size: 2em;
+  }
+  .marquee-rtl {
+    font-size: 2em;
+  }
+}
