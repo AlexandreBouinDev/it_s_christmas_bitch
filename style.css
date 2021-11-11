@@ -93,8 +93,8 @@ iframe {
 .mariah {
   display: block;
   position: relative;
-  width: 1280px;
-  height: 720px;
+  width: 50vw;
+  height: calc((50vw * 9) / 16);
 }
 
 .marquee-rtl {
@@ -188,7 +188,7 @@ iframe {
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
   .videogrid {
     display: flex;
     flex-direction: column;
